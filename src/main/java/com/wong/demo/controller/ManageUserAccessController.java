@@ -3,6 +3,7 @@ package com.wong.demo.controller;
 import com.wong.demo.model.Feature;
 import com.wong.demo.service.ManageUserAccessService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,18 +15,17 @@ public class ManageUserAccessController {
     ManageUserAccessService manageUserAccessService;
 
     @PostMapping(path="/create")
-    public ResponseEntity<Feature> addEmployee(@RequestBody Feature feature){
+    public ResponseEntity addEmployee(@RequestBody Feature feature){
 
 
         Feature result = manageUserAccessService.createFeature(feature.getFeatureName(),feature.getEmail(),feature.getEnable());
 
         if(result != null) {
-            return ResponseEntity.ok().body(result);
+            return ResponseEntity.ok().build();
         }
         else
         {
-            return ResponseEntity.notFound().build();
-
+            return new ResponseEntity(HttpStatus.NOT_MODIFIED);
         }
     }
 
@@ -40,7 +40,6 @@ public class ManageUserAccessController {
         else
         {
             return ResponseEntity.notFound().build();
-
         }
 
     }

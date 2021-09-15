@@ -20,7 +20,7 @@ public class ManageUserAccessServiceTest {
 
     @Test
     public void testSuccessGetFeature(){
-        Feature feature = new Feature("Wong","xxx@gamilc.con",true);
+        Feature feature = new Feature("Wong","xxx@gamil.com",true);
 
         Mockito.when(manageUserAccessRepository.findByEmailAndFeatureName(any(),any())).thenReturn(feature);
         Feature result = manageUserAccessRepository.findByEmailAndFeatureName("xxx@gmail.com","Wong");

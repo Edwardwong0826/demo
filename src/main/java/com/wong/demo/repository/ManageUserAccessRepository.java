@@ -1,5 +1,6 @@
 package com.wong.demo.repository;
 
+import com.wong.demo.dto.FeatureDTO;
 import com.wong.demo.model.Feature;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

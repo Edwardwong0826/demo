@@ -20,7 +20,7 @@ public class ManageUserAccessServiceImpl implements ManageUserAccessService {
 
     @Override
     public Feature getFeature(String email, String featureName) {
-        return manageUserAccessRepository.findByEmailAndFeatureName(email,featureName);
 
+        return manageUserAccessRepository.findByEmailAndFeatureName(email,featureName);
     }
 }

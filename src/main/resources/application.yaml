@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:~/test
     driverClassName: org.h2.Driver
     username: sa
     password:
@@ -10,8 +10,8 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     # To auto generate and created the table into the database without we created
-#    generate-ddl: true
-#    hibernate:
-#      ddl-auto=create:
+    generate-ddl: true
+    hibernate:
+      ddl-auto=create:
 
 
